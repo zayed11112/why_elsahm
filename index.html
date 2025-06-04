@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لماذا نحن الخيار الأمثل؟</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8fafc;
+            min-height: 100vh;
+            padding: 0;
+            direction: rtl;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0;
+            background: white;
+            box-shadow: none;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            padding: 80px 40px;
+            text-align: center;
+            color: white;
+            border-radius: 0 0 50px 50px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 6px;
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            border-radius: 3px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            animation: slideInDown 1s ease-out;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            animation: slideInUp 1s ease-out 0.3s both;
+        }
+
+        .features {
+            padding: 0 40px 80px 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+            padding: 40px;
+            border-radius: 20px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature:nth-child(1) { animation-delay: 0.1s; }
+        .feature:nth-child(2) { animation-delay: 0.2s; }
+        .feature:nth-child(3) { animation-delay: 0.3s; }
+        .feature:nth-child(4) { animation-delay: 0.4s; }
+
+        .feature:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-color: #cbd5e1;
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .feature:hover .feature-icon {
+            transform: scale(1.1);
+        }
+
+        .feature-icon.trust {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            color: white;
+        }
+
+        .feature-icon.variety {
+            background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+            color: white;
+        }
+
+        .feature-icon.speed {
+            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+            color: white;
+        }
+
+        .feature-icon.guarantee {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+        }
+
+        .feature-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: #1e293b;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .feature-content p {
+            color: #64748b;
+            line-height: 1.7;
+            font-size: 1.05rem;
+            font-weight: 400;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 60px 20px;
+                border-radius: 0 0 30px 30px;
+                margin-bottom: 40px;
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .header p {
+                font-size: 1.1rem;
+            }
+
+            .features {
+                padding: 0 20px 60px 20px;
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .feature {
+                padding: 30px 25px;
+                gap: 20px;
+            }
+
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+
+            .feature-content h3 {
+                font-size: 1.3rem;
+            }
+
+            .feature-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>لماذا نحن الخيار الأمثل؟</h1>
+            <p>نسعى دائماً لتقديم أفضل الخدمات العقارية في مدينة العريش</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon trust">
+                    <span>🛡️</span>
+                </div>
+                <div class="feature-content">
+                    <h3>خبرة تثق بها</h3>
+                    <p>نعرف سوق العريش من الداخل، ونوجهك بكل دقة نحو الخيار الأنسب لك.</p>
+                </div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon variety">
+                    <span>🏢</span>
+                </div>
+                <div class="feature-content">
+                    <h3>تشكيلة مميزة</h3>
+                    <p>شقق، محلات، وساحات استثمارية تناسب كل الأذواق والميزانيات.</p>
+                </div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon speed">
+                    <span>⚡</span>
+                </div>
+                <div class="feature-content">
+                    <h3>سرعة واحترافية</h3>
+                    <p>نلبي طلبك بسرعة واحترافية تستحقها.</p>
+                </div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon guarantee">
+                    <span>🔒</span>
+                </div>
+                <div class="feature-content">
+                    <h3>ضمان ورعاية</h3>
+                    <p>نقدم لك خدمة ما بعد البيع والتأجير وتضمين حقوقك بالكامل.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // تحسين الأداء والتفاعل
+        document.addEventListener('DOMContentLoaded', function() {
+            // إضافة تأثيرات تفاعلية للميزات
+            const features = document.querySelectorAll('.feature');
+            
+            // إضافة مراقب التقاطع للرسوم المتحركة عند التمرير
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            features.forEach(feature => {
+                observer.observe(feature);
+                
+                // إضافة تأثير النقر
+                feature.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+
+            // تحسين الأداء بتأخير تحميل الرسوم المتحركة
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 100);
+        });
+
+        // تحسين الأداء للأجهزة المحمولة
+        if ('ontouchstart' in window) {
+            document.body.classList.add('touch-device');
+        }
+    </script>
+</body>
+</html>
